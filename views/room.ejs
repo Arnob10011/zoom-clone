@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.4.5/dist/peerjs.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/7f7aea5a19.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+    </script>
+
+    <title>Zoom Clone</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main__left">
+        <div class="main__videos">
+          <div id="video-grid"></div>
+        </div>
+
+        <div class="main__controls">
+          <div class="main__controls_block">
+            <!-- mute -->
+            <div
+              id="microphone"
+              class="main__controls__button main__mute_button"
+            >
+              <i class="fas fa-microphone"></i>
+              <span>Mute</span>
+            </div>
+            <!-- video -->
+            <div
+              id="btn-video"
+              class="main__controls__button main__video_button"
+            >
+              <i class="fas fa-video"></i>
+              <span>Stop video</span>
+            </div>
+          </div>
+
+          <!-- others -->
+          <div class="main__controls_block">
+            <!-- mute -->
+            <div class="main__controls__button">
+              <i class="fas fa-shield-alt"></i>
+              <span>Security</span>
+            </div>
+
+            <div class="main__controls__button">
+              <i class="fas fa-user-friends"></i>
+              <span>Prticipants</span>
+            </div>
+            <!-- video -->
+            <div class="main__controls__button">
+              <i class="fas fa-comment-alt"></i>
+              <span>Chat</span>
+            </div>
+
+            <div class="main__controls__button">
+              <span class="leave_meeting">Leave meeting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__right">
+        <div class="main__header">
+          <h6>Chat</h6>
+        </div>
+        <div class="main__chat_window">
+          <ul class="messages">
+            <!-- messges -->
+          </ul>
+        </div>
+
+        <div class="main__message_container">
+          <input
+            type="text"
+            placeholder="Type message here"
+            id="chat_message"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
